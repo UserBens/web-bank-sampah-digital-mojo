@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BerandaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+// ini halaman pengunjung ges
+Route::get('/', [BerandaController::class, 'beranda']);
+Route::get('/tentangkami', [BerandaController::class, 'tentangkami']);
+Route::get('/postingan', [BerandaController::class, 'postingan']);
+Route::get('/produk', [BerandaController::class, 'produk']);
+Route::get('/kontak', [BerandaController::class, 'kontak']);
