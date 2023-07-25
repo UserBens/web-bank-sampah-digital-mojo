@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BerandaController;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,3 +25,4 @@ Route::get('/tentangkami', [BerandaController::class, 'tentangkami']);
 Route::get('/postingan', [BerandaController::class, 'postingan']);
 Route::get('/produk', [BerandaController::class, 'produk']);
 Route::get('/kontak', [BerandaController::class, 'kontak']);
+Route::get('/login', [LoginController::class, 'login']);
