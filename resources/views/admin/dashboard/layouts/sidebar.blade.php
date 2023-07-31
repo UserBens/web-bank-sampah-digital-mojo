@@ -8,25 +8,25 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ Request::is('dashboard/posts*') ? 'active' : '' }}" href="/dashboard/posts">
+                <a class="nav-link {{ Request::is('dashboard/postingan*') ? 'active' : '' }}" href="/dashboard/postingan">
                     <span data-feather="file-text" class="align-text-bottom"></span>
                     Postingan
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ Request::is('dashboard/posts*') ? 'active' : '' }}" href="/dashboard/posts">
-                    <span data-feather="file-text" class="align-text-bottom"></span>
+                <a class="nav-link {{ Request::is('dashboard/produk*') ? 'active' : '' }}" href="/dashboard/produk">
+                    <span data-feather="tool" class="align-text-bottom"></span>
                     Produk
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ Request::is('dashboard/posts*') ? 'active' : '' }}" href="/dashboard/posts">
-                    <span data-feather="file-text" class="align-text-bottom"></span>
+                <a class="nav-link {{ Request::is('dashboard/tentangkami*') ? 'active' : '' }}" href="/dashboard/tentangkami">
+                    <span data-feather="info" class="align-text-bottom"></span>
                     Tentang Kami
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ Request::is('dashboard/posts*') ? 'active' : '' }}" href="/dashboard/posts">
+                <a class="nav-link {{ Request::is('dashboard/kontak*') ? 'active' : '' }}" href="/dashboard/kontak">
                     <span data-feather="phone" class="align-text-bottom"></span>
                     Kontak
                 </a>
@@ -34,7 +34,7 @@
         </ul>
 
      
-            <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+            {{-- <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
                 <span>Administrator</span>
             </h6>
 
@@ -46,7 +46,7 @@
                         Post Categories
                     </a>
                 </li>
-            </ul>
+            </ul> --}}
       
     </div>
 </nav>

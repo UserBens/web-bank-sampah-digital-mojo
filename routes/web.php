@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\BerandaadminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\BerandaController;
+use App\Http\Controllers\BerandaimageController;
 use App\Http\Controllers\DashboardController;
 
 /*
@@ -30,5 +32,17 @@ Route::get('/kontak', [BerandaController::class, 'kontak']);
 //ini halaman admin gess
 Route::get('/login', [LoginController::class, 'login']);
 Route::get('/dashboard', [DashboardController::class, 'index']);
-Route::get('/dashboard/beranda', [DashboardController::class, 'beranda']);
+
+
+Route::resource('/dashboard/beranda', BerandaimageController::class);
+// Route::resource('dashboard/beranda', BerandaimageController::class)->parameters([
+//     'beranda' => 'postberandaimage' // Ganti 'beranda' dengan 'postberandaimage'
+// ]);
+
+Route::get('/dashboard/postingan', [DashboardController::class, 'postingan']);
+Route::get('/dashboard/produk', [DashboardController::class, 'produk']);
+Route::get('/dashboard/tentangkami', [DashboardController::class, 'tentangkami']);
+Route::get('/dashboard/kontak', [DashboardController::class, 'kontak']);
+
+
 
