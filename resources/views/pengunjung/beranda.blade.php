@@ -92,7 +92,7 @@
     <!-- Custom styles for this template -->
     <link href="/css/beranda.css" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link href="beranda.css" rel="stylesheet">
+    {{-- <link href="beranda.css" rel="stylesheet"> --}}
 </head>
 
 <body>
