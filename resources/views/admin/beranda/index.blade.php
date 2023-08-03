@@ -23,14 +23,14 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($data as $item)
+                @foreach ($postimage as $item)
                     <tr>
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $item->nama_file }}</td>
                         <td>{{ $item->created_at }}</td>
                         <td>
 
-                            <a href="/storage/{{ $item->image }}" class="badge bg-info" target="blank"><span
+                            <a href="/{{ $item->image }}" class="badge bg-info" target="blank"><span
                                     data-feather="eye"></span></a>
 
                             <a href="/dashboard/beranda/{{ $item->id }}/edit" class="badge bg-warning"><span

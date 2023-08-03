@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Postberandaimage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
+
 
 class BerandaimageController extends Controller
 {
@@ -13,8 +15,9 @@ class BerandaimageController extends Controller
      */
     public function index()
     {
+        // $data = Postberandaimage::all();
         return view('admin.beranda.index', [
-            'data' => Postberandaimage::all()
+            'postimage' => Postberandaimage::all()
         ]);
     }
 
@@ -69,7 +72,12 @@ class BerandaimageController extends Controller
      */
     public function show(string $id)
     {
-        //
+        // try {
+        //     $postimage = Postberandaimage::findOrFail($id);
+        //     return view('admin.beranda.show', compact('postimage'));
+        // } catch (ModelNotFoundException $e) {
+        //     return redirect('/dashboard/beranda')->with('error', 'Data tidak ditemukan.');
+        // }
     }
 
     /**
@@ -77,7 +85,12 @@ class BerandaimageController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        try {
+            $postimage = Postberandaimage::findOrFail($id);
+            return view('admin.beranda.edit', compact('postimage'));
+        } catch (ModelNotFoundException $e) {
+            return redirect('/dashboard/beranda')->with('error', 'Data tidak ditemukan.');
+        }
     }
 
     /**
@@ -85,7 +98,37 @@ class BerandaimageController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $rules = [
+            'nama_file' => 'required',
+            'image' => 'nullable|mimes:jpg,png,jpeg|max:20048',
+        ];
+
+        $validatedData = $request->validate($rules);
+
+        try {
+            $postimage = Postberandaimage::findOrFail($id);
+
+            $postimage->fill($request->all());
+
+            if ($request->file('image')) {
+                if ($postimage->image) {
+                    Storage::delete($postimage->image);
+                }
+
+                $file = $request->file('image');
+                $fileName = $file->getClientOriginalName();
+                $path = $file->storeAs('public/data-file', $fileName);
+                $postimage->image = str_replace('public/', 'storage/', $path);
+            }
+
+            $postimage->save();
+
+            return redirect('/dashboard/beranda')->with('success', 'Postingan Berhasil Di Update!');
+        } catch (ModelNotFoundException $e) {
+            return redirect('/dashboard/beranda')->with('error', 'Data tidak ditemukan.');
+        } catch (\Exception $e) {
+            return redirect('/dashboard/beranda')->with('error', 'Terjadi kesalahan saat menyimpan data: ' . $e->getMessage());
+        }
     }
 
     /**

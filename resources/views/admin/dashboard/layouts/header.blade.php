@@ -8,10 +8,11 @@
         aria-label="Search"> --}}
     <div class="navbar-nav">
         <div class="nav-item text-nowrap">
-            <form action="/logout" method="POST">
+            {{-- <form action="/login" method="POST">
                 @csrf
                 <button type="submit" class="nav-link px-3 bg-dark border-0">Logout <span data-feather="log-out"></span></button>
-            </form>
+            </form> --}}
+            <a href="/login"><button type="submit" class="nav-link px-3 bg-dark border-0">Logout <span data-feather="log-out"></span></button></a>
         </div>
     </div>
 </header>
