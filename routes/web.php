@@ -32,6 +32,7 @@ Route::get('/kontak', [BerandaController::class, 'kontak']);
 //ini halaman admin gess
 Route::get('/login', [LoginController::class, 'login']);
 Route::get('/dashboard', [DashboardController::class, 'index']);
+Route::post('/login', [LoginController::class, 'authenticate']);
 
 
 Route::resource('/dashboard/beranda', BerandaimageController::class);

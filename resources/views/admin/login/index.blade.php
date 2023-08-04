@@ -102,17 +102,23 @@
 <body class="d-flex align-items-center py-4 bg-body-tertiary">
 
     <main class="form-signin w-100 m-auto">
-        <form>
+        <form action="/login" method="post">
+            @csrf
             {{-- <img class="mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> --}}
             <h1 class="text-center h3 mb-3 fw-normal">Login Halaman Admin</h1>
 
             <div class="form-floating mb-1">
-                <input type="text" class="form-control" id="floatingInput" placeholder="Username">
-                <label for="floatingInput">Masukan username</label>
+                <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" id="email" placeholder="name@example.com" autofocus required value="{{ old ('email') }}">
+                <label for="email">Masukan username</label>
             </div>
             <div class="form-floating mb-3">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                <label for="floatingPassword">Masukan Password</label>
+                <input type="password" name="password"class="form-control" id="password" placeholder="Password" required>
+                <label for="password">Masukan Password</label>
+                @error('email')
+                <div class="invalid-feedback">
+                    {{ $message }}
+                </div>
+                @enderror
             </div>
 
             {{-- <div class="form-check text-start my-3">
