@@ -12,7 +12,7 @@
 @endif
 
 <div class="table-responsive col-lg-11">
-    <a href="/dashboard/categories/create" class="btn btn-primary mb-3 mt-2">Tambah Postingan</a>
+    <a href="/dashboard/postingan/tambah" class="btn btn-primary mb-3 mt-2">Tambah Postingan</a>
     <table class="table table-striped table-sm">
         <thead>
             <tr>

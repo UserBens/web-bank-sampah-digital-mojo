@@ -101,6 +101,24 @@
 
 <body class="d-flex align-items-center py-4 bg-body-tertiary">
 
+           
+        @if(session()->has('success'))
+         <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ session('success') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"> 
+            </button> 
+         </div>
+         @endif
+
+         @if(session()->has('loginError')) 
+         <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            {{ session('loginError') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"> 
+            </button> 
+         </div>
+         @endif
+            
+
     <main class="form-signin w-100 m-auto">
         <form action="/login" method="post">
             @csrf

@@ -1,11 +1,13 @@
 <?php
 
 use App\Http\Controllers\BerandaadminController;
+use App\Http\Controllers\PostinganController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\BerandaimageController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,6 +46,8 @@ Route::get('/dashboard/postingan', [DashboardController::class, 'postingan']);
 Route::get('/dashboard/produk', [DashboardController::class, 'produk']);
 Route::get('/dashboard/tentangkami', [DashboardController::class, 'tentangkami']);
 Route::get('/dashboard/kontak', [DashboardController::class, 'kontak']);
+
+Route::resource('/dasboard/postingan', PostController::class);
 
 
 
