@@ -8,6 +8,7 @@ use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\BerandaimageController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\ProdukController;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,4 +51,10 @@ Route::get('/dashboard/kontak', [DashboardController::class, 'kontak']);
 Route::resource('/dasboard/postingan', PostController::class);
 
 
+//INI BUAT PRODUK COY
+Route::get('/indexpro',[ProdukController::class,'tampil_produk']);
+Route::get('/add-produk',[ProdukController::class,'admin_addproduk']);
+Route::post('/add',[ProdukController::class,'add_adminproduk']);
+Route::get('/edit/{id}',[ProdukController::class,'admin_editproduk']);
+Route::post('/edit-produk',[ProdukController::class,'edit_adminproduk']);
 
