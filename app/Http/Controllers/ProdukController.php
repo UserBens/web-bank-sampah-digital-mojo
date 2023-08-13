@@ -12,7 +12,15 @@ class ProdukController extends Controller
     {
         $allData = produk::paginate(5);
         return view('admin.produk.index',['data'=>$allData]);
+       
     }
+    // public function tampil_produk() {
+    //     // $data = produk::paginate(10); // Misalnya, mengambil data produk dan menggunakan paginasi
+    //     // return view('admin.produk.index', compact('data'));
+    //     return view('admin.produk.index', [
+    //         'data' => produk::all()
+    //     ]);
+    // }
     public function admin_editproduk($id)
     {
         $edit = produk::find($id);

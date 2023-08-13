@@ -8,8 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     use HasFactory; 
-    protected $table = 'postimage'; // Sesuaikan dengan nama tabel yang benar di database
-    protected $fillable = [
-        'nama_file', 'image'
-    ];
+    protected $table = 'post'; // Sesuaikan dengan nama tabel yang benar di database
+    protected $guarded = ['id'];
+    // protected $fillable = [
+    //     'user_id', 'title', 'image', 'body'
+    // ];
 }

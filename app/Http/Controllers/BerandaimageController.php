@@ -72,12 +72,7 @@ class BerandaimageController extends Controller
      */
     public function show(string $id)
     {
-        // try {
-        //     $postimage = Postberandaimage::findOrFail($id);
-        //     return view('admin.beranda.show', compact('postimage'));
-        // } catch (ModelNotFoundException $e) {
-        //     return redirect('/dashboard/beranda')->with('error', 'Data tidak ditemukan.');
-        // }
+        //
     }
 
     /**

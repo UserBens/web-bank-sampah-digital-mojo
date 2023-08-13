@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\BerandaadminController;
-use App\Http\Controllers\PostinganController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\BerandaController;
@@ -43,12 +42,12 @@ Route::resource('/dashboard/beranda', BerandaimageController::class);
 //     'beranda' => 'postberandaimage' // Ganti 'beranda' dengan 'postberandaimage'
 // ]);
 
-Route::get('/dashboard/postingan', [DashboardController::class, 'postingan']);
+
 Route::get('/dashboard/produk', [DashboardController::class, 'produk']);
 Route::get('/dashboard/tentangkami', [DashboardController::class, 'tentangkami']);
 Route::get('/dashboard/kontak', [DashboardController::class, 'kontak']);
 
-Route::resource('/dasboard/postingan', PostController::class);
+Route::resource('/dashboard/postingan', PostController::class);
 
 
 //INI BUAT PRODUK COY

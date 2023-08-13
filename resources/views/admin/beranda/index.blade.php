@@ -30,7 +30,7 @@
                         <td>{{ $item->created_at }}</td>
                         <td>
 
-                            <a href="/{{ $item->image }}" class="badge bg-info" target="blank"><span
+                            <a href="/storage/{{ $item->image }}" class="badge bg-info" target="blank"><span
                                     data-feather="eye"></span></a>
 
                             <a href="/dashboard/beranda/{{ $item->id }}/edit" class="badge bg-warning"><span

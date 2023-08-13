@@ -6,6 +6,8 @@ use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Support\Str;
+
 
 
 class PostController extends Controller
@@ -16,16 +18,16 @@ class PostController extends Controller
     public function index()
     {
         return view('admin.postingan.index', [
-            'postimage' => Post::all()
+            'post' => Post::all()
         ]);
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function tambah()
+    public function create()
     {
-        return view('admin.postingan.tambah');
+        return view('admin.postingan.create');
     }
 
     /**
@@ -33,7 +35,23 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'title' => 'required|max:255',
+            'image' => 'image|file|max:1024',
+            'body' => 'required'
+        ]);
+
+        if($request->file('image')) {
+            $validatedData['image'] = $request->file('image')->store('post-images');
+        }
+
+        // $validatedData['user_id'] = auth()->user()->id;
+        // $validatedData['excerpt'] = Str::limit(strip_tags($request->body), 200);
+        $validatedData['body'] = Str::limit(strip_tags($request->body), 200);
+
+        Post::create($validatedData);
+
+        return redirect('/dashboard/postingan')->with('success', 'post baru telah ditambahkan!');
     }
 
     /**

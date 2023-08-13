@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('post', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id');
             $table->string('title');
+            $table->text('image')->nullable();
             $table->text('body');
             $table->timestamp('published_at')->nullable();
             $table->timestamps();
