@@ -12,7 +12,10 @@
                 @csrf
                 <button type="submit" class="nav-link px-3 bg-dark border-0">Logout <span data-feather="log-out"></span></button>
             </form> --}}
-            <a href="/login"><button type="submit" class="nav-link px-3 bg-dark border-0">Login <span data-feather="log-out"></span></button></a>
+            <form action="{{ route('logout') }}" method="POST">
+                @csrf
+                <button type="submit" class="nav-link px-3 bg-dark border-0">Logout <span data-feather="log-out"></span></button>
+            </form>
         </div>
     </div>
 </header>

@@ -32,12 +32,14 @@ Route::get('/produk', [BerandaController::class, 'produk']);
 Route::get('/kontak', [BerandaController::class, 'kontak']);
 
 //ini halaman admin gess
-Route::get('/login', [LoginController::class, 'login']);
-Route::get('/dashboard', [DashboardController::class, 'index']);
+Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'authenticate']);
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
 
 
-Route::resource('/dashboard/beranda', BerandaimageController::class);
+Route::resource('/dashboard/beranda', BerandaimageController::class)->middleware('auth');
 // Route::resource('dashboard/beranda', BerandaimageController::class)->parameters([
 //     'beranda' => 'postberandaimage' // Ganti 'beranda' dengan 'postberandaimage'
 // ]);
@@ -47,7 +49,7 @@ Route::get('/dashboard/produk', [DashboardController::class, 'produk']);
 Route::get('/dashboard/tentangkami', [DashboardController::class, 'tentangkami']);
 Route::get('/dashboard/kontak', [DashboardController::class, 'kontak']);
 
-Route::resource('/dashboard/postingan', PostController::class);
+Route::resource('/dashboard/postingan', PostController::class)->middleware('auth');
 
 
 //INI BUAT PRODUK COY
