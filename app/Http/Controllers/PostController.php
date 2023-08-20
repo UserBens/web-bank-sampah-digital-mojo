@@ -67,7 +67,12 @@ class PostController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        try {
+            $post = Post::findOrFail($id);
+            return view('admin.postingan.edit', compact('post'));
+        } catch (ModelNotFoundException $e) {
+            return redirect('/dashboard/beranda')->with('error', 'Data tidak ditemukan.');
+        }
     }
 
     /**
@@ -75,7 +80,37 @@ class PostController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $rules = [
+            'nama_file' => 'required',
+            'image' => 'nullable|mimes:jpg,png,jpeg|max:20048',
+        ];
+
+        $validatedData = $request->validate($rules);
+
+        try {
+            $post = Post::findOrFail($id);
+
+            $post->fill($request->all());
+
+            if ($request->file('image')) {
+                if ($post->image) {
+                    Storage::delete($post->image);
+                }
+
+                $file = $request->file('image');
+                $id = $file->getClientOriginalName();
+                $path = $file->storeAs('public/data-file', $id);
+                $post->image = str_replace('public/', 'storage/', $path);
+            }
+
+            $post->save();
+
+            return redirect('/dashboard/postingan')->with('success', 'Postingan Berhasil Di Update!');
+        } catch (ModelNotFoundException $e) {
+            return redirect('/dashboard/postingan')->with('error', 'Data tidak ditemukan.');
+        } catch (\Exception $e) {
+            return redirect('/dashboard/postingan')->with('error', 'Terjadi kesalahan saat menyimpan data: ' . $e->getMessage());
+        }
     }
 
     /**
