@@ -10,7 +10,5 @@ class Post extends Model
     use HasFactory; 
     protected $table = 'post'; // Sesuaikan dengan nama tabel yang benar di database
     protected $guarded = ['id'];
-    // protected $fillable = [
-    //     'user_id', 'title', 'image', 'body'
-    // ];
+    protected $fillable = ['title', 'image', 'body'];
 }

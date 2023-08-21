@@ -37,17 +37,20 @@ class PostController extends Controller
     {
         $validatedData = $request->validate([
             'title' => 'required|max:255',
-            'image' => 'image|file|max:1024',
+            'image' => 'image|file|max:20024',
             'body' => 'required'
         ]);
 
-        if($request->file('image')) {
-            $validatedData['image'] = $request->file('image')->store('post-images');
+        // if($request->file('image')) {
+        //     $validatedData['image'] = $request->file('image')->store('post-images');
+        // }
+        if ($request->file('image')) {
+            $validatedData['image'] = $request->file('image')->store('public/post-images');
         }
 
         // $validatedData['user_id'] = auth()->user()->id;
         // $validatedData['excerpt'] = Str::limit(strip_tags($request->body), 200);
-        $validatedData['body'] = Str::limit(strip_tags($request->body), 200);
+        // $validatedData['body'] = Str::limit(strip_tags($request->body), 200);
 
         Post::create($validatedData);
 
@@ -57,9 +60,13 @@ class PostController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show($id)
     {
-        //
+        $post = Post::findOrFail($id);
+
+        return view('admin.postingan.show', [
+            'post' => $post
+        ]);
     }
 
     /**
@@ -83,6 +90,12 @@ class PostController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        try {
+            $post = Post::findOrFail($id);
+            $post->delete();
+            return redirect('/dashboard/postingan')->with('success', 'Data berhasil dihapus!');
+        } catch (\Exception $e) {
+            return redirect('/dashboard/postingan')->with('error', 'Terjadi kesalahan saat menghapus data: ' . $e->getMessage());
+        }
     }
 }

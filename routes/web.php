@@ -50,6 +50,8 @@ Route::get('/dashboard/tentangkami', [DashboardController::class, 'tentangkami']
 Route::get('/dashboard/kontak', [DashboardController::class, 'kontak']);
 
 Route::resource('/dashboard/postingan', PostController::class)->middleware('auth');
+// Route::resource('/dashboard/postingan', PostController::class)
+//     ->except('show')->middleware('auth'); 
 
 
 //INI BUAT PRODUK COY
