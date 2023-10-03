@@ -2,13 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use Illuminate\Http\Request;
+use App\Models\Postberandaimage;
+use App\Models\Product;
 
 class BerandaController extends Controller
 {
     public function beranda()
     {
-        return view('pengunjung.beranda');
+        return view('pengunjung.beranda', [
+            'sidebar' => Post::orderBy('id', 'desc')->take(5)->get(),
+            'post' => Post::orderBy('id', 'desc')->take(2)->get(),
+            'postimage' => Postberandaimage::all()
+        ]);
     }
 
     public function tentangkami()
@@ -18,12 +25,19 @@ class BerandaController extends Controller
 
     public function postingan()
     {
-        return view('pengunjung.postingan');
+        // dd(Post::all());
+        return view('pengunjung.postingan', [
+            // 'post' => Post::all()
+            'post' => Post::orderBy('id', 'desc')->take(6)->get(),
+        ]);
+        
     }
 
     public function produk()
     {
-        return view('pengunjung.produk');
+        return view('pengunjung.produk', [
+            'produks' => Product::orderBy('id', 'desc')->take(6)->get(),
+        ]);
     }
 
     public function kontak()

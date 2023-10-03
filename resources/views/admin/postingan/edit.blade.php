@@ -10,10 +10,10 @@
             @method('PUT') <!-- Menggunakan method PUT untuk update -->
 
             <div class="mb-3">
-                <label for="id" class="form-label">File Name</label>
-                <input type="text" class="form-control @error('id') is-invalid @enderror" id="id"
-                    name="id" value="{{ old('id', $post->id) }}">
-                @error('nama_file')
+                <label for="title" class="form-label">Title</label>
+                <input type="text" class="form-control @error('title') is-invalid @enderror" id="title"
+                    name="title" value="{{ old('title', $post->title) }}">
+                @error('title')
                     <div class="invalid-feedback">
                         {{ $message }}
                     </div>
@@ -21,13 +21,22 @@
             </div>
 
             <div class="mb-3">
-                <label for="image" class="form-label">Post File</label>
+                <label for="image" class="form-label">Image</label>
                 <input class="form-control @error('image') is-invalid @enderror" type="file" id="image"
                     name="image">
                 @error('image')
                     <div class="invalid-feedback">
                         {{ $message }}
                     </div>
+                @enderror
+            </div>
+
+            <div class="mb-3">
+                <label for="body" class="form-label">Body</label>
+                <input id="body" type="hidden" name="body"  value="{{ old('body', $post->body) }}">
+                <trix-editor input="body"></trix-editor>
+                @error('body')
+                    <p class="text-danger">{{ $message }}</p>
                 @enderror
             </div>
 

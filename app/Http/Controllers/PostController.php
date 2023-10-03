@@ -17,6 +17,7 @@ class PostController extends Controller
      */
     public function index()
     {
+        
         return view('admin.postingan.index', [
             'post' => Post::all()
         ]);
@@ -41,16 +42,9 @@ class PostController extends Controller
             'body' => 'required'
         ]);
 
-        // if($request->file('image')) {
-        //     $validatedData['image'] = $request->file('image')->store('post-images');
-        // }
         if ($request->file('image')) {
-            $validatedData['image'] = $request->file('image')->store('public/post-images');
+            $validatedData['image'] = $request->file('image')->store('storage/uploads/postingan','public');
         }
-
-        // $validatedData['user_id'] = auth()->user()->id;
-        // $validatedData['excerpt'] = Str::limit(strip_tags($request->body), 200);
-        // $validatedData['body'] = Str::limit(strip_tags($request->body), 200);
 
         Post::create($validatedData);
 
@@ -59,7 +53,7 @@ class PostController extends Controller
 
     /**
      * Display the specified resource.
-     */
+     */ 
     public function show($id)
     {
         $post = Post::findOrFail($id);
@@ -78,7 +72,7 @@ class PostController extends Controller
             $post = Post::findOrFail($id);
             return view('admin.postingan.edit', compact('post'));
         } catch (ModelNotFoundException $e) {
-            return redirect('/dashboard/beranda')->with('error', 'Data tidak ditemukan.');
+            return redirect('/dashboard/postingan')->with('error', 'Data tidak ditemukan.');
         }
     }
 
@@ -90,6 +84,7 @@ class PostController extends Controller
         $rules = [
             'nama_file' => 'required',
             'image' => 'nullable|mimes:jpg,png,jpeg|max:20048',
+            'body' => 'required',
         ];
 
         $validatedData = $request->validate($rules);
@@ -106,11 +101,14 @@ class PostController extends Controller
 
                 $file = $request->file('image');
                 $id = $file->getClientOriginalName();
-                $path = $file->storeAs('public/data-file', $id);
+                $path = $file->storeAs('public/post-images', $id);
                 $post->image = str_replace('public/', 'storage/', $path);
             }
+            
+            Post::where('id', $post->id)
+            ->update($validatedData);
 
-            $post->save();
+            // $post->save();
 
             return redirect('/dashboard/postingan')->with('success', 'Postingan Berhasil Di Update!');
         } catch (ModelNotFoundException $e) {

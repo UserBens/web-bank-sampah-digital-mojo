@@ -7,7 +7,7 @@ use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\BerandaimageController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PostController;
-use App\Http\Controllers\ProdukController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,14 +50,15 @@ Route::get('/dashboard/tentangkami', [DashboardController::class, 'tentangkami']
 Route::get('/dashboard/kontak', [DashboardController::class, 'kontak']);
 
 Route::resource('/dashboard/postingan', PostController::class)->middleware('auth');
+Route::resource('/dashboard/produk', ProductController::class)->middleware('auth');
 // Route::resource('/dashboard/postingan', PostController::class)
 //     ->except('show')->middleware('auth'); 
 
 
 //INI BUAT PRODUK COY
-Route::get('/indexpro',[ProdukController::class,'tampil_produk']);
-Route::get('/add-produk',[ProdukController::class,'admin_addproduk']);
-Route::post('/add',[ProdukController::class,'add_adminproduk']);
-Route::get('/edit/{id}',[ProdukController::class,'admin_editproduk']);
-Route::post('/edit-produk',[ProdukController::class,'edit_adminproduk']);
+// Route::get('/indexpro',[ProdukController::class,'tampil_produk']);
+// Route::get('/add-produk',[ProdukController::class,'admin_addproduk']);
+// Route::post('/add',[ProdukController::class,'add_adminproduk']);
+// Route::get('/edit/{id}',[ProdukController::class,'admin_editproduk']);
+// Route::post('/edit-produk',[ProdukController::class,'edit_adminproduk']);
 
