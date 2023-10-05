@@ -28,6 +28,7 @@ use App\Http\Controllers\ProductController;
 Route::get('/', [BerandaController::class, 'beranda']);
 Route::get('/tentangkami', [BerandaController::class, 'tentangkami']);
 Route::get('/postingan', [BerandaController::class, 'postingan']);
+Route::get('/detail-postingan', [BerandaController::class, 'detailpostingan']);
 Route::get('/produk', [BerandaController::class, 'produk']);
 Route::get('/kontak', [BerandaController::class, 'kontak']);
 
@@ -55,10 +56,4 @@ Route::resource('/dashboard/produk', ProductController::class)->middleware('auth
 //     ->except('show')->middleware('auth'); 
 
 
-//INI BUAT PRODUK COY
-// Route::get('/indexpro',[ProdukController::class,'tampil_produk']);
-// Route::get('/add-produk',[ProdukController::class,'admin_addproduk']);
-// Route::post('/add',[ProdukController::class,'add_adminproduk']);
-// Route::get('/edit/{id}',[ProdukController::class,'admin_editproduk']);
-// Route::post('/edit-produk',[ProdukController::class,'edit_adminproduk']);
 

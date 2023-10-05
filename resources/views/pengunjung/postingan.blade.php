@@ -274,15 +274,15 @@
                                 </svg> --}}
 
                                 {{-- <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="{{ $item->image }}" alt=""> --}}
-                                <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="{{ asset($item->image) }}" alt="{{ $item->title }}">
+                                <img class="bd-placeholder-img card-img-top" width="100%" height="225"
+                                    src="{{ asset($item->image) }}" alt="{{ $item->title }}">
                                 <div class="card-body">
-                                    <p class="card-text">{{$item->title}}</p>
+                                    <p class="card-text">{{ $item->title }}</p>
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div class="btn-group">
-                                            <button type="button"
-                                                class="btn btn-sm btn-outline-secondary">View</button>
-                                            <button type="button"
-                                                class="btn btn-sm btn-outline-secondary">Edit</button>
+                                            <button type="button" class="btn btn-sm btn-outline-secondary"><a
+                                                    class="nav-item nav-link link-body-emphasis"
+                                                    href="/detail-postingan">View</a></button>
                                         </div>
                                         <small class="text-body-secondary">9 mins</small>
                                     </div>

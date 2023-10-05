@@ -35,7 +35,7 @@
     </div>
 
     <main class="container">
-        <div class="img-container">
+        {{-- <div class="img-container">
             <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-indicators">
                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
@@ -100,68 +100,106 @@
                     <span class="visually-hidden">Next</span>
                 </button>
             </div>
-        </div>
+        </div> --}}
 
         <div class="row mb-2 mt-4">
-            <h3 class="fst-italic mt-4 mb-4 text-center" style="text-decoration: underline;">Produk Terbaru</h3>
-            @foreach ($produks as $item)
-                <div class="col-md-4">
-                    <div class="col">
-                        <div class="card shadow-sm">
-                            <img class="bd-placeholder-img card-img-top" width="100%" height="225"
-                                src="{{ asset($item->image) }}" alt="{{ $item->nama_produk }}">
-                            <div class="card-body">
-                                <p class="card-text">{{ $item->nama_produk }}</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary"><a
-                                                class="nav-item nav-link link-body-emphasis"
-                                                href="/detail-postingan">View</a></button>
-                                    </div>
-                                    <small class="text-body-secondary">9 mins</small>
-                                </div>
-                            </div>
-                        </div>
+            <div class="col-md-6">
+                <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <div class="col p-4 d-flex flex-column position-static">
+                        <strong class="d-inline-block mb-2 text-primary-emphasis">World</strong>
+                        <h3 class="mb-0">Featured post</h3>
+                        <div class="mb-1 text-body-secondary">Nov 12</div>
+                        <p class="card-text mb-auto">This is a wider card with supporting text below as a natural
+                            lead-in to additional content.</p>
+                        <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
+                            Continue reading
+                            <svg class="bi">
+                                <use xlink:href="#chevron-right" />
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="col-auto d-none d-lg-block">
+                        <svg class="bd-placeholder-img" width="200" height="250"
+                            xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
+                            preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <title>Placeholder</title>
+                            <rect width="100%" height="100%" fill="#55595c" /><text x="50%"
+                                y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
+                        </svg>
                     </div>
                 </div>
-            @endforeach
+            </div>
+
+            <div class="col-md-6">
+                <div
+                    class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <div class="col p-4 d-flex flex-column position-static">
+                        <strong class="d-inline-block mb-2 text-success-emphasis">Design</strong>
+                        <h3 class="mb-0">Post title</h3>
+                        <div class="mb-1 text-body-secondary">Nov 11</div>
+                        <p class="mb-auto">This is a wider card with supporting text below as a natural lead-in to
+                            additional content.</p>
+                        <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
+                            Continue reading
+                            <svg class="bi">
+                                <use xlink:href="#chevron-right" />
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="col-auto d-none d-lg-block">
+                        <svg class="bd-placeholder-img" width="200" height="250"
+                            xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
+                            preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <title>Placeholder</title>
+                            <rect width="100%" height="100%" fill="#55595c" /><text x="50%"
+                                y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
+                        </svg>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="row g-5">
             <div class="col-md-8">
-                <h3 class="fst-italic mt-4 mb-4 text-center" style="text-decoration: underline;">Postingan Terbaru
-                </h3>
-                @foreach ($detailpost as $item)
-                    <img src="{{ asset($item->image) }}" alt="{{ $item->title }}"
-                        class="bd-placeholder-img card-img-top" width="100%" height="500">
-                    <h5 class="mt-3"> {{ $item->title }}</h5>
-                    <div class="mb-4" style="text-align: justify;">
-                        <p>{!! $item->body !!}</p>
-                    </div>
+                @foreach ($post as $item)
+                    {{ $item->title }}
+                    {{ $item->body }}
                 @endforeach
             </div>
 
-            <div class="col-md-4 mb-5">
+            <div class="col-md-4">
                 <div class="position-sticky" style="top: 2rem;">
+                    <div class="p-4 mb-3 bg-body-tertiary rounded">
+                        <h4 class="fst-italic">About</h4>
+                        <p class="mb-0">Customize this section to tell your visitors a little bit about your
+                            publication, writers, content, or something else entirely. Totally up to you.</p>
+                    </div>
+
                     <div>
-                        <h4 class="fst-italic mt-4">Postingan Lainnya</h4>
+                        <h4 class="fst-italic">Postingan Terkini</h4>
                         <ul class="list-unstyled">
+
                             <li>
+
                                 @foreach ($post as $item)
                                     <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
                                         href="#">
-                                        <img src="{{ asset($item->image) }}" alt="{{ $item->title }}"
-                                            class="bd-placeholder-img" width="100%" height="96" alt="...">
+                                        <img src="{{ asset('storage/' . $item->image) }}" class="bd-placeholder-img"
+                                            width="100%" height="96" alt="...">
 
                                         <div class="col-lg-8">
                                             <h6 class="mb-0">{{ $item->title }}</h6>
                                             <small class="text-body-secondary">{{ $item->created_at }}</small>
                                         </div>
+
                                     </a>
                                 @endforeach
+
                             </li>
+
                         </ul>
                     </div>
+
                 </div>
             </div>
         </div>

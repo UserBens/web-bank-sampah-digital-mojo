@@ -12,8 +12,10 @@ class BerandaController extends Controller
     public function beranda()
     {
         return view('pengunjung.beranda', [
+            'produks' => Product::orderBy('id', 'desc')->take(3)->get(),
             'sidebar' => Post::orderBy('id', 'desc')->take(5)->get(),
-            'post' => Post::orderBy('id', 'desc')->take(2)->get(),
+            'post' => Post::orderBy('id', 'desc')->take(4)->get(),
+            'detailpost' => Post::orderBy('id', 'desc')->take(1)->get(),
             'postimage' => Postberandaimage::all()
         ]);
     }
@@ -27,6 +29,16 @@ class BerandaController extends Controller
     {
         // dd(Post::all());
         return view('pengunjung.postingan', [
+            // 'post' => Post::all()
+            'post' => Post::orderBy('id', 'desc')->take(6)->get(),
+        ]);
+        
+    }
+
+    public function detailpostingan()
+    {
+        // dd(Post::all());
+        return view('pengunjung.detailpostingan', [
             // 'post' => Post::all()
             'post' => Post::orderBy('id', 'desc')->take(6)->get(),
         ]);
