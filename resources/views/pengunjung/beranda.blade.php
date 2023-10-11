@@ -118,7 +118,7 @@
                                                 class="nav-item nav-link link-body-emphasis"
                                                 href="/detail-postingan">View</a></button>
                                     </div>
-                                    <small class="text-body-secondary">9 mins</small>
+                                    <small class="text-body-secondary">{{ $item->created_at->diffForHumans() }}</small>
                                 </div>
                             </div>
                         </div>
@@ -155,7 +155,8 @@
 
                                         <div class="col-lg-8">
                                             <h6 class="mb-0">{{ $item->title }}</h6>
-                                            <small class="text-body-secondary">{{ $item->created_at }}</small>
+                                            <small
+                                                class="text-body-secondary">{{ $item->created_at->diffForHumans() }}</small>
                                         </div>
                                     </a>
                                 @endforeach
@@ -169,8 +170,7 @@
     </main>
 
     <footer class="py-5 text-center text-body-secondary bg-body-tertiary">
-        <p>Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by <a
-                href="https://twitter.com/mdo">@mdo</a>.</p>
+        <p>Bank Sampah Digital Mojo 2023 </p>
         <p class="mb-0">
             <a href="#">Back to top</a>
         </p>

@@ -16,7 +16,7 @@ class BerandaController extends Controller
             'sidebar' => Post::orderBy('id', 'desc')->take(5)->get(),
             'post' => Post::orderBy('id', 'desc')->take(4)->get(),
             'detailpost' => Post::orderBy('id', 'desc')->take(1)->get(),
-            'postimage' => Postberandaimage::all()
+            // 'postimage' => Postberandaimage::all()
         ]);
     }
 
@@ -30,7 +30,7 @@ class BerandaController extends Controller
         // dd(Post::all());
         return view('pengunjung.postingan', [
             // 'post' => Post::all()
-            'post' => Post::orderBy('id', 'desc')->take(6)->get(),
+            'post' => Post::orderBy('id', 'desc')->paginate(6),
         ]);
         
     }
@@ -48,7 +48,7 @@ class BerandaController extends Controller
     public function produk()
     {
         return view('pengunjung.produk', [
-            'produks' => Product::orderBy('id', 'desc')->take(6)->get(),
+            'produks' => Product::orderBy('id', 'desc')->paginate(6),
         ]);
     }
 

@@ -82,8 +82,8 @@ class PostController extends Controller
     public function update(Request $request, string $id)
     {
         $rules = [
-            'nama_file' => 'required',
-            'image' => 'nullable|mimes:jpg,png,jpeg|max:20048',
+            'title' => 'required',
+            'image' => 'image|file|max:20024',
             'body' => 'required',
         ];
 
@@ -101,8 +101,8 @@ class PostController extends Controller
 
                 $file = $request->file('image');
                 $id = $file->getClientOriginalName();
-                $path = $file->storeAs('public/post-images', $id);
-                $post->image = str_replace('public/', 'storage/', $path);
+                $path = $file->storeAs('storage/uploads/postingan','public', $id);
+                $post->image = str_replace('storage/uploads/postingan','public', $path);
             }
             
             Post::where('id', $post->id)
