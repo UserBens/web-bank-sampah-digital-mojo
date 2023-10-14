@@ -54,8 +54,8 @@
                                 style="width: 100%; height: 100%; object-fit: cover; max-height: none;">
                         </div>
                         <div class="carousel-caption d-none d-md-block">
-                            <h5>First slide label</h5>
-                            <p>Some representative placeholder content for the first slide.</p>
+                            {{-- <h5>First slide label</h5>
+                            <p>Some representative placeholder content for the first slide.</p> --}}
                         </div>
                     </div>
                     <div class="carousel-item">
@@ -64,8 +64,8 @@
                                 style="width: 100%; height: 100%; object-fit: cover; max-height: none;">
                         </div>
                         <div class="carousel-caption d-none d-md-block">
-                            <h5>Second slide label</h5>
-                            <p>Some representative placeholder content for the second slide.</p>
+                            {{-- <h5>Second slide label</h5>
+                            <p>Some representative placeholder content for the second slide.</p> --}}
                         </div>
                     </div>
                     <div class="carousel-item">
@@ -74,8 +74,8 @@
                                 style="width: 100%; height: 100%; object-fit: cover; max-height: none;">
                         </div>
                         <div class="carousel-caption d-none d-md-block">
-                            <h5>Third slide label</h5>
-                            <p>Some representative placeholder content for the third slide.</p>
+                            {{-- <h5>Third slide label</h5>
+                            <p>Some representative placeholder content for the third slide.</p> --}}
                         </div>
                     </div>
                     <div class="carousel-item">
@@ -84,8 +84,8 @@
                                 style="width: 100%; height: 100%; object-fit: cover; max-height: none;">
                         </div>
                         <div class="carousel-caption d-none d-md-block">
-                            <h5>Third slide label</h5>
-                            <p>Some representative placeholder content for the third slide.</p>
+                            {{-- <h5>Third slide label</h5>
+                            <p>Some representative placeholder content for the third slide.</p> --}}
                         </div>
                     </div>
                 </div>
@@ -116,7 +116,7 @@
                                     <div class="btn-group">
                                         <button type="button" class="btn btn-sm btn-outline-secondary"><a
                                                 class="nav-item nav-link link-body-emphasis"
-                                                href="/detail-postingan">View</a></button>
+                                                href="/detail-produk/{{ $item->id }}">View</a></button>
                                     </div>
                                     <small class="text-body-secondary">{{ $item->created_at->diffForHumans() }}</small>
                                 </div>
@@ -149,7 +149,7 @@
                             <li>
                                 @foreach ($post as $item)
                                     <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
-                                        href="#">
+                                        href="/detail-postingan/{{ $item->id }}">
                                         <img src="{{ asset($item->image) }}" alt="{{ $item->title }}"
                                             class="bd-placeholder-img" width="100%" height="96" alt="...">
 
@@ -169,7 +169,7 @@
 
     </main>
 
-    <footer class="py-5 text-center text-body-secondary bg-body-tertiary">
+    <footer class="py-5 text-center text-body-secondary bg-body-tertiar">
         <p>Bank Sampah Digital Mojo 2023 </p>
         <p class="mb-0">
             <a href="#">Back to top</a>

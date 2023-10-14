@@ -28,7 +28,10 @@ use App\Http\Controllers\ProductController;
 Route::get('/', [BerandaController::class, 'beranda']);
 Route::get('/tentangkami', [BerandaController::class, 'tentangkami']);
 Route::get('/postingan', [BerandaController::class, 'postingan']);
+
 Route::get('/detail-postingan', [BerandaController::class, 'detailpostingan']);
+Route::get('/detail-produk/{id}', [BerandaController::class, 'detailproduk']);
+Route::get('/detail-postingan/{id}', [BerandaController::class, 'detailpostingan']);
 Route::get('/produk', [BerandaController::class, 'produk']);
 Route::get('/kontak', [BerandaController::class, 'kontak']);
 

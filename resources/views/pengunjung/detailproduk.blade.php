@@ -64,13 +64,13 @@
 
         <div class="row g-5">
             <div class="col-md-8">
-                <h3 class="fst-italic mt-4 mb-4 text-center" style="text-decoration: underline;">Detail Postingan
+                <h3 class="fst-italic mt-4 mb-4 text-center" style="text-decoration: underline;">Detail Produk
                 </h3>
-                <img src="{{ asset($post->image) }}" alt="{{ $post->title }}"
+                <img src="{{ asset($product->image) }}" alt="{{ $product->nama_produk }}"
                     class="bd-placeholder-img card-img-top" width="100%" height="500">
-                <h5 class="mt-3"> {{ $post->title }}</h5>
+                <h5 class="mt-3"> {{ $product->nama_produk }}</h5>
                 <div class="mb-4" style="text-align: justify;">
-                    <p>{!! $post->body !!}</p>
+                    <p>{!! $product->deskripsi_produk !!}</p>
                 </div>
 
             </div>
@@ -81,20 +81,21 @@
                         <h4 class="fst-italic mt-4">Postingan Lainnya</h4>
                         <ul class="list-unstyled">
                             <li>
-                                @foreach ($sidebar as $item)
+                                @foreach ($post as $item)
                                     <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
                                         href="/detail-postingan/{{ $item->id }}">
                                         <img src="{{ asset($item->image) }}" alt="{{ $item->title }}"
                                             class="bd-placeholder-img" width="100%" height="96" alt="...">
-                        
+
                                         <div class="col-lg-8">
                                             <h6 class="mb-0">{{ $item->title }}</h6>
-                                            <small class="text-body-secondary">{{ $item->created_at->diffForHumans() }}</small>
+                                            <small
+                                                class="text-body-secondary">{{ $item->created_at->diffForHumans() }}</small>
                                         </div>
                                     </a>
                                 @endforeach
                             </li>
-                        </ul>                        
+                        </ul>
                     </div>
                 </div>
             </div>

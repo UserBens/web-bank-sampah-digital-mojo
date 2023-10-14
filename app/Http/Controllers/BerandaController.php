@@ -25,25 +25,38 @@ class BerandaController extends Controller
         return view('pengunjung.tentangkami');
     }
 
-    public function postingan()
+    // public function postingan(Request $request)
+    // {      
+    //     $searchQuery = $request->input('search');
+
+
+    //     $posts = Post::where('title', 'like', '%' . $searchQuery . '%')->orderBy('id', 'desc')->paginate(6);
+
+    //     return view('pengunjung.postingan', [   
+    //             return view('pengunjung.search_results', ['posts' => $posts]);
+    //     ]);
+    // }
+    public function search(Request $request)
     {
-        // dd(Post::all());
-        return view('pengunjung.postingan', [
-            // 'post' => Post::all()
-            'post' => Post::orderBy('id', 'desc')->paginate(6),
-        ]);
-        
+        $searchQuery = $request->input('search');
+
+        $posts = Post::where('title', 'like', '%' . $searchQuery . '%')->orderBy('id', 'desc')->paginate(6);
+
+        return view('pengunjung.search_results', ['posts' => $posts]);
     }
 
-    public function detailpostingan()
+
+    public function detailpostingan($id)
     {
-        // dd(Post::all());
+        $post = Post::find($id);
+
         return view('pengunjung.detailpostingan', [
-            // 'post' => Post::all()
-            'post' => Post::orderBy('id', 'desc')->take(6)->get(),
+            'produks' => Product::orderBy('id', 'desc')->take(3)->get(),
+            'post' => $post, // Menggunakan $post yang telah ditemukan
+            'sidebar' => Post::orderBy('id', 'desc')->take(4)->get(),
         ]);
-        
     }
+
 
     public function produk()
     {
@@ -51,6 +64,19 @@ class BerandaController extends Controller
             'produks' => Product::orderBy('id', 'desc')->paginate(6),
         ]);
     }
+
+    public function detailproduk($id)
+    {
+        $product = Product::find($id);
+
+        return view('pengunjung.detailproduk', [
+            'produks' => Product::orderBy('id', 'desc')->take(3)->get(),
+            'sidebar' => Post::orderBy('id', 'desc')->take(5)->get(),
+            'post' => Post::orderBy('id', 'desc')->take(4)->get(),
+            'product' => $product,
+        ]);
+    }
+
 
     public function kontak()
     {
