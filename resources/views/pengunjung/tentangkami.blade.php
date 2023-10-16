@@ -221,24 +221,11 @@
             <svg class="bi mt-4 mb-3" style="color: var(--bs-indigo);" width="100" height="100">
                 <use xlink:href="#bootstrap" />
             </svg>
-            <h1 class="text-body-emphasis">Jumbotron with icon</h1>
-            <p class="col-lg-8 mx-auto fs-5 text-muted">
-                This is a custom jumbotron featuring an SVG image at the top, some longer text that wraps early thanks
-                to a responsive <code>.col-*</code> class, and a customized call to action.
-            </p>
-            <div class="d-inline-flex gap-2 mb-5">
-                <button class="d-inline-flex align-items-center btn btn-primary btn-lg px-4 rounded-pill"
-                    type="button">
-                    Call to action
-                    <svg class="bi ms-2" width="24" height="24">
-                        <use xlink:href="#arrow-right-short" />
-                    </svg>
-                </button>
-                <button class="btn btn-outline-secondary btn-lg px-4 rounded-pill" type="button">
-                    Secondary link
-                </button>
-            </div>
+           
+            <h1 class="text-body-emphasis">Di isi Foto Kelurahan Mojo</h1>
+            
         </div>
+        
     </div>
 
     <div class="b-example-divider"></div>
@@ -248,12 +235,31 @@
     <div class="my-5">
         <div class="p-5 text-center bg-body-tertiary">
             <div class="container py-5">
-                <h1 class="text-body-emphasis">Full-width jumbotron</h1>
-                <p class="col-lg-8 mx-auto lead">
-                    This takes the basic jumbotron above and makes its background edge-to-edge with a
-                    <code>.container</code> inside to align content. Similar to above, it's been recreated with built-in
-                    grid and utility classes.
-                </p>
+                <!-- <h1 class="text-body-emphasis">Full-width jumbotron</h1> -->
+                <div class="container">
+                    <div class="row mb-4 pd-4 ">
+                        <div class="col text-center">
+                            <h1>Tentang Kami</h1>
+                        </div>
+                    </div>
+                </div>
+            <section class="abaut">
+               
+                <div class="row justify-content-center">
+                    <div class="col-md-5 text-center">
+                        <p>Mojo adalah kelurahan yg paling rapih dan terkoordinir dari kelurahan di kecamatan gubeng ini mengenai pengolahan 
+                            sampahnya. tapi tak heran jika masa ke masa perlu adanya sentuhan teknologi agar pendataan sampah tiap warga 
+                            berjala dengan lancar. salah satunya adalah dibuatkannya aplikasi administrasi </p>
+                    </div>
+                    <div class="col-md-5 text-center">
+                        <p>hingga pembukuan 
+                            bank sampah di kelurahan mojo. tak hanya itu, kami dari tim HIMATIFTA juga menciptakan sensor iOt pendeteksi 
+                            pembludakan sampah yang terjadi di gudang bank sampah yang 
+                            dimana bangunan tersebut adalah hasil dari perjuangan kita dengan masyarakat Mojo</p>
+                    </div>
+                    
+                </div>
+            </section>
             </div>
         </div>
     </div>
@@ -262,13 +268,90 @@
 
     <div class="container my-5">
         <div class="p-5 text-center bg-body-tertiary rounded-3">
-            <h1 class="text-body-emphasis">Basic jumbotron</h1>
-            <p class="lead">
-                This is a simple Bootstrap jumbotron that sits within a <code>.container</code>, recreated with built-in
-                utility classes.
-            </p>
+        <div class="container">
+                    <div class="row mb-4 pd-4 ">
+                        <div class="col text-center">
+                            <h1>Toko Masyarakat</h1>
+                        </div>
+                    </div>
+                </div>
+    <div class="row">
+      <div class="col-lg-4">
+        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+
+        <h2>Nama</h2>
+        <p>Keterangan</p>
+        <!-- <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p> -->
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+
+        <h2>Nama</h2>
+        <p>Keterangan</p>
+        <!-- <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p> -->
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+
+        <h2>Nama</h2>
+        <p>Keterangan</p>
+        <!-- <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p> -->
+      </div><!-- /.col-lg-4 -->
+    </div><!-- /.row -->
         </div>
     </div>
+    <div class="container marketing">
+
+   
+
+
+    <!-- START THE FEATURETTES -->
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading">Prestasi</h2>
+        <p class="lead">Keterangan</p>
+      </div>
+      <div class="col-md-5">
+        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
+
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading">Prestasi </h2>
+        <p class="lead">Keterangan</p>
+      </div>
+      <div class="col-md-5 order-md-1">
+        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
+
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading">Prestasi</h2>
+        <p class="lead">Keterangan</p>
+      </div>
+      <div class="col-md-5">
+        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
+
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <!-- /END THE FEATURETTES -->
+
+  </div><!-- /.container -->
+
 
     <div class="b-example-divider"></div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
