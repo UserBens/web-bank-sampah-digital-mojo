@@ -25,26 +25,12 @@ class BerandaController extends Controller
         return view('pengunjung.tentangkami');
     }
 
-    // public function postingan(Request $request)
-    // {      
-    //     $searchQuery = $request->input('search');
-
-
-    //     $posts = Post::where('title', 'like', '%' . $searchQuery . '%')->orderBy('id', 'desc')->paginate(6);
-
-    //     return view('pengunjung.postingan', [   
-    //             return view('pengunjung.search_results', ['posts' => $posts]);
-    //     ]);
-    // }
-    public function search(Request $request)
-    {
-        $searchQuery = $request->input('search');
-
-        $posts = Post::where('title', 'like', '%' . $searchQuery . '%')->orderBy('id', 'desc')->paginate(6);
-
-        return view('pengunjung.search_results', ['posts' => $posts]);
+    public function postingan()
+    {      
+        return view('pengunjung.postingan', [           
+            'post' => Post::orderBy('id', 'desc')->paginate(6),
+        ]);
     }
-
 
     public function detailpostingan($id)
     {

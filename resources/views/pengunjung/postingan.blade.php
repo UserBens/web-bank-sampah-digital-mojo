@@ -39,14 +39,14 @@
             <div class="container">
                 <h3 class="fst-italic mt-4 mb-4 text-center" style="text-decoration: underline;">Postingan Terkini</h3>
 
-                <div class="input-group mb-4">
+                {{-- <div class="input-group mb-4">
                     <input type="text" class="form-control" placeholder="Search.." name="search" id="searchInput" value="{{ request('search') }}">
                     <button class="btn btn-dark" type="button" id="searchButton">Search</button>
                 </div>
                 
                 <div id="searchResults" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                     <!-- Hasil pencarian akan ditampilkan di sini -->
-                </div>
+                </div> --}}
                 
 
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
