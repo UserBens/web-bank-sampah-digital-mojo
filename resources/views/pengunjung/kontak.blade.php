@@ -70,10 +70,11 @@
                         <span class="glyphicon glyphicon-envelope"></span>
                         <ul class="list-group list-group-flush">
                             <h4 class="mt-2">+62 853-7748-786</h4>
+                            <h4 class="mt-2">ppkormawauntag17@gmail.com</h4>
                         </ul>
 
                         <ul class="mt-4 list-inline">
-                            <i class="list-inline-item fab fa-instagram fa-2x"></i>
+                            <a href="https://www.instagram.com/ppkormawauntag/"><i class="list-inline-item fab fa-instagram fa-2x"></i></a>
                             <i class="fa fa-envelope fa-2x" aria-hidden="true"></i>
                         </ul>
 
