@@ -38,11 +38,12 @@
 
     <div class="container my-5">
         <div class="p-5 text-center bg-body-tertiary rounded-3">
-            <svg class="bi mt-4 mb-3" style="color: var(--bs-indigo);" width="100" height="100">
+            {{-- <svg class="bi mt-4 mb-3" style="color: var(--bs-indigo);" width="100" height="100">
                 <use xlink:href="#bootstrap" />
-            </svg>
+            </svg> --}}
 
-            <h1 class="text-body-emphasis">Di isi Foto Kelurahan Mojo</h1>
+            <img src="/images/hero4.jpg" alt=""
+            class="bd-placeholder-img card-img-top" width="100%" height="500">
 
         </div>
 
@@ -89,7 +90,7 @@
 
     <div class="b-example-divider"></div>
 
-    <div class="container my-5">
+    {{-- <div class="container my-5">
         <div class="p-5 text-center bg-body-tertiary rounded-3">
             <div class="container">
                 <div class="row mb-4 pd-4 ">
@@ -140,12 +141,10 @@
                 </div><!-- /.col-lg-4 -->
             </div><!-- /.row -->
         </div>
-    </div>
-    <div class="container marketing">
-
-
-
-
+    </div> --}}
+    
+    
+    {{-- <div class="container marketing">
         <!-- START THE FEATURETTES -->
 
         <hr class="featurette-divider">
@@ -209,7 +208,7 @@
 
         <!-- /END THE FEATURETTES -->
 
-    </div><!-- /.container -->
+    </div><!-- /.container --> --}}
 
     <footer class="text-body-secondary py-5 justify-content-center">
         <div class="container">
