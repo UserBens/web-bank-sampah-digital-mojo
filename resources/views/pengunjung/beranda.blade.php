@@ -22,8 +22,32 @@
 
 <body>
     <div class="container">
-        <header class="border-bottom lh-1 py-3"></header>
-        <div class="nav-scroller py-1 mb-3 border-bottom">
+        <header class="border-bottom lh-1 py-4">
+            <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">Beranda</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Kegiatan</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Produk</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Pricing</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        {{-- <div class="nav-scroller py-1 mb-3 border-bottom">
             <nav class="nav nav-underline justify-content-between">
                 <a class="nav-item nav-link link-body-emphasis" href="/">Beranda</a>
                 <a class="nav-item nav-link link-body-emphasis" href="/postingan">Postingan</a>
@@ -31,7 +55,7 @@
                 <a class="nav-item nav-link link-body-emphasis" href="/tentangkami">Tentang Kami</a>
                 <a class="nav-item nav-link link-body-emphasis" href="/kontak">Kontak</a>
             </nav>
-        </div>
+        </div> --}}
     </div>
 
     <main class="container">
@@ -107,18 +131,18 @@
             @foreach ($produks as $item)
                 <div class="col-md-4">
                     <div class="col">
-                        <div class="card shadow-sm">
+                        <div class="card shadow-sm  text-white">
                             <img class="bd-placeholder-img card-img-top" width="100%" height="225"
                                 src="{{ asset($item->image) }}" alt="{{ $item->nama_produk }}">
-                            <div class="card-body">
+                            <div class="card-body bg-dark bg-gradient">
                                 <p class="card-text">{{ $item->nama_produk }}</p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
                                         <button type="button" class="btn btn-sm btn-outline-secondary"><a
-                                                class="nav-item nav-link link-body-emphasis"
+                                                class="nav-item nav-link link-body-emphasis text-white"
                                                 href="/detail-produk/{{ $item->id }}">View</a></button>
                                     </div>
-                                    <small class="text-body-secondary">{{ $item->created_at->diffForHumans() }}</small>
+                                    <small class="text-white">{{ $item->created_at->diffForHumans() }}</small>
                                 </div>
                             </div>
                         </div>
@@ -169,7 +193,7 @@
 
     </main>
 
-    <footer class="py-5 text-center text-body-secondary bg-body-tertiar">
+    <footer class="py-5 text-center text-body-secondary bg-body-tertiary">
         <p>Bank Sampah Digital Mojo 2023 </p>
         <p class="mb-0">
             <a href="#">Back to top</a>

@@ -53,20 +53,19 @@
                     @foreach ($post as $item)
                         <div class="col">
                             <div class="card shadow-sm">
-
                                 <img class="bd-placeholder-img card-img-top" width="100%" height="225"
                                     src="{{ asset($item->image) }}" alt="{{ $item->title }}">
-                                <div class="card-body">
-                                    <p class="card-text">{{ $item->title }}</p>
+                                <div class="card-body bg-dark bg-gradient">
+                                    <p class="card-text text-white">{{ $item->title }}</p>
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div class="btn-group">
                                             <button type="button" class="btn btn-sm btn-outline-secondary"><a
-                                                    class="nav-item nav-link link-body-emphasis"
+                                                    class="nav-item nav-link link-body-emphasis text-white"
                                                     href="/detail-postingan/{{ $item->id }}">View</a></button>
                                         </div>
                                         {{-- <small class="text-body-secondary">{{ $post->created_at->diffForHumans() }}</small> --}}
                                         <small
-                                            class="text-body-secondary">{{ $item->created_at->diffForHumans() }}</small>
+                                            class="text-white">{{ $item->created_at->diffForHumans() }}</small>
 
                                     </div>
                                 </div>
