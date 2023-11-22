@@ -54,8 +54,8 @@
                                 style="width: 100%; height: 100%; object-fit: cover; max-height: none;">
                         </div>
                         <div class="carousel-caption d-none d-md-block">
-                            <h5>Second slide label</h5>
-                            <p>Some representative placeholder content for the second slide.</p>
+                            <h5>PPK ORMAWA </h5>
+                            <p>Himpunan Mahasiswa Teknik Informatika Universitas 17 Agustus 1945 Surabaya</p>
                         </div>
                     </div>
                     <div class="carousel-item">
@@ -65,7 +65,7 @@
                         </div>
                         <div class="carousel-caption d-none d-md-block">
                             <h5>Second slide label</h5>
-                            <p>Some representative placeholder content for the second slide.</p>
+                            <p>Himpunan Mahasiswa Teknik Informatika Universitas 17 Agustus 1945 Surabaya</p>
                         </div>
                     </div>
                     <div class="carousel-item">
@@ -74,8 +74,8 @@
                                 style="width: 100%; height: 100%; object-fit: cover; max-height: none;">
                         </div>
                         <div class="carousel-caption d-none d-md-block">
-                            <h5>Third slide label</h5>
-                            <p>Some representative placeholder content for the third slide.</p>
+                            <h5>PPK ORMAWA</h5>
+                            <p>Himpunan Mahasiswa Teknik Informatika Universitas 17 Agustus 1945 Surabaya</p></p>
                         </div>
                     </div>
                     <div class="carousel-item">
@@ -84,8 +84,8 @@
                                 style="width: 100%; height: 100%; object-fit: cover; max-height: none;">
                         </div>
                         <div class="carousel-caption d-none d-md-block">
-                            <h5>Third slide label</h5>
-                            <p>Some representative placeholder content for the third slide.</p>
+                            <h5>PPK ORMAWA</h5>
+                            <p>Himpunan Mahasiswa Teknik Informatika Universitas 17 Agustus 1945 Surabaya</p></p>
                         </div>
                     </div>
                 </div>
